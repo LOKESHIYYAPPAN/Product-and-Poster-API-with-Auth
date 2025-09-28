@@ -14,7 +14,7 @@ async function createUser(email, hashedPassword, role = 'User') {
 }
 
 async function findById(id) {
-    const result = await db.query('SELECT id, email, created_at FROM users WHERE id = $1', [id]);
+    const result = await db.query('SELECT * FROM users WHERE id = $1', [id]);
     return result.rows[0];
 }
 
